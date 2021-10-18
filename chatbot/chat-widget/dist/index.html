@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Marvin Chat-bot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <div class="container clearfix">
+        <div class="people-list" id="people-list">
+
+
+        </div>
+
+        <div class="chat">
+            <div class="chat-header clearfix">
+                <img src="img/mvm.png" alt="avatar" width="50px" />
+
+                <div class="chat-about">
+                    <div class="chat-with">Marvin</div>
+                    <div class="chat-num-messages"></div>
+                </div>
+
+            </div>
+            <!-- end chat-header -->
+
+            <div class="chat-history">
+                <ul>
+
+                    <li id="first">
+                        <div class="message-data">
+                            <span class="message-data-name"><i class="fa fa-circle online"></i> Marvin</span>
+                            <span class="message-data-time">10:20 AM, Today</span>
+                        </div>
+                        <div class="message my-message" id="msg">
+                            Olá, Pode me ajudar a aprender?
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="message-data">
+
+                        </div>
+                        <span class="message-data-time" id="dig">Digitando...</span>
+
+                    </li>
+
+                </ul>
+
+            </div>
+            <!-- end chat-history -->
+
+            <div class="chat-message clearfix">
+                <textarea name="message-to-send" id="message-to-send" placeholder="Digite sua mensagem" rows="3"></textarea>
+
+
+
+                <button>Enviar</button>
+
+            </div>
+            <!-- end chat-message -->
+
+        </div>
+        <!-- end chat -->
+
+    </div>
+    <!-- end container -->
+
+    <script id="message-template" type="text/x-handlebars-template">
+        <li class="clearfix">
+            <div class="message-data align-right">
+                <span class="message-data-time">{{time}}, Today</span> &nbsp; &nbsp;
+                <span class="message-data-name">Faze teste</span> <i class="fa fa-circle me"></i>
+            </div>
+            <div class="message other-message float-right">
+                {{messageOutput}}
+            </div>
+        </li>
+    </script>
+
+    <script id="message-response-template" type="text/x-handlebars-template">
+        <li>
+            <div class="message-data">
+                <span class="message-data-name"><i class="fa fa-circle online"></i> Marvin</span>
+                <span class="message-data-time">{{time}}, Today</span>
+            </div>
+            <div class="message my-message">
+                {{response}}
+            </div>
+        </li>
+    </script>
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/list.js/1.1.1/list.min.js'></script>
+    <script src="./script_chat.js"></script>
+
+</body>
+
+</html>
